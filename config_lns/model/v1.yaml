@@ -1,0 +1,15 @@
+# @package _global_
+# model checkpoints to load for different time window frequencies (twf)
+
+type_twf_map_model:
+  1:
+    0.25: "checkpoints/pg_pomo_all_1_low_50.ckpt"
+    0.5: "checkpoints/pg_pomo_all_1_low_50.ckpt"
+    0.75: "checkpoints/pg_pomo_all_1_high_50.ckpt"
+    1.0: "checkpoints/pg_pomo_all_1_high_50.ckpt"
+
+  2:
+    0.25: "checkpoints/pg_rollout_all_2_low_50.ckpt"
+    0.5: "checkpoints/pg_rollout_all_2_low_50.ckpt"
+    0.75: "checkpoints/pg_pomo_all_2_high_50.ckpt"
+    1.0: "checkpoints/pg_pomo_all_2_high_50.ckpt"

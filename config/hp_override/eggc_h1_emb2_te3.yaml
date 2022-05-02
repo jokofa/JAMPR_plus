@@ -1,0 +1,19 @@
+# @package _global_
+# model parameters
+
+has_overrides: True
+# POLICY model
+policy_cfg:
+  embedding_dim: 256
+
+  node_encoder_args:
+    hidden_dim: 128
+    num_layers: 3
+    conv_type: "EGGConv"
+    activation: "relu"
+    norm_type: "bn"
+
+  tour_encoder_args:
+    hidden_dim: 128
+    num_layers: 3
+    conv_type: "GraphConv"

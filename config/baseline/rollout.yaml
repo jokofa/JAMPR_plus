@@ -1,0 +1,18 @@
+# @package _global_
+# model parameters
+
+baseline_cfg:
+  baseline_type: 'rollout'
+  baseline_args:
+    bl_alpha: 0.05
+    sample_size: 1024
+    graph_size: ${graph_size}
+    batch_size: 128
+    check_significance: True    # flag to use ttest
+    alpha: 0.05   # p-val confidence lvl
+    resample_interval: 2    # number of epochs when to resample baseline val set
+    num_workers: 4
+  warmup: True    # use warmup procedure
+  warmup_args:
+    epochs: 1
+    warmup_exp_beta: 0.8

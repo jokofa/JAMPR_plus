@@ -1,0 +1,38 @@
+# @package _global_
+# model parameters
+
+# POLICY model
+policy_cfg:
+  embedding_dim: 256
+
+  # node encoder
+  node_encoder_type: "NodeEncoder"
+  node_encoder_args:
+    hidden_dim: 128
+    num_layers: 3
+    conv_type: "GraphConv"
+    activation: "gelu"
+    skip: True
+    norm_type: "ln"
+    add_linear: False
+
+  # tour encoder
+  tour_encoder_type: "TourEncoder"
+  tour_encoder_args:
+    hidden_dim: 128
+    num_layers: 2
+    propagate_reverse: True
+    consolidate_nbh: True
+    conv_type: "GraphConv"
+    activation: "gelu"
+    skip: True
+    norm_type: "ln"
+    add_linear: False
+
+  # decoder
+  decoder_type: "AttnDecoder"
+  decoder_args:
+    hidden_dim: 256
+    num_heads: 4
+    clip_tanh: 10.0
+    bias: False

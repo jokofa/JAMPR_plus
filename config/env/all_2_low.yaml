@@ -1,0 +1,31 @@
+# @package _global_
+# problem args
+
+problem_id: "all_2_low"
+graph_size: 50
+
+# cfg specifying Solomon data groups, types and tw fractions
+_data_cfg:
+  groups: [ "r", "c", "rc" ]
+  types: [2]
+  tw_fracs: [ 0.25, 0.5 ]
+
+# RPEnv cfg
+env_cfg:
+  k_nbh_frac: 0.25
+
+# data
+train_ds_cfg:
+  cfg: ${_data_cfg}
+  stats_pth: "./solomon_stats.pkl"
+  data_pth: #
+
+val_ds_cfg:
+  cfg: ${_data_cfg}
+  stats_pth: "./solomon_stats.pkl"
+  data_pth: #
+
+test_ds_cfg:
+  cfg: ${_data_cfg}
+  stats_pth: #
+  data_pth: "./data/solomon_prep.pkl"

@@ -1,0 +1,5 @@
+# @package _global_
+# problem args
+
+env_cfg:
+  max_concurrent_vehicles: 5

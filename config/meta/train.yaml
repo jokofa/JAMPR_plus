@@ -1,0 +1,60 @@
+# @package _global_
+
+run_type: "train"
+debug_lvl: 0
+global_seed: 1234
+cuda: True
+
+# global paths and logging
+log_lvl: INFO
+tb_log_path: 'logs/tb/'
+val_log_path: 'logs/val/'
+test_log_path: 'logs/test/'
+checkpoint_save_path: 'checkpoints/'
+checkpoint_load_path: #
+
+# global training args
+eval_metric_key: 'cost'
+render_val: False
+
+checkpoint_cfg:
+  compare_mode: 'min'   # comparison mode of eval metric (rew -> max, cost -> min)
+  top_k: 2              # always keep top_k best model checkpoints
+  save_last: True       # always safe last model checkpoint
+
+monitor_cfg:
+  train_interval: 200    # log training results every train_interval episodes
+  eval_interval: 200     # log test results every test_interval episodes
+  save_interval: 1       # save checkpoint every save_interval epochs if val metric is better
+
+optimizer_cfg:
+  lr_policy: 2.5e-4
+
+scheduler_cfg:
+  schedule_type: "linear"
+  decay: 0.97
+
+
+trainer_cfg:
+  num_epochs: 100
+  disable_progress_bar: True
+  num_workers: 4
+
+  train_dataset_size: 25000
+  train_batch_size: 100
+  val_dataset_size: 1024
+  val_batch_size: 128
+  graph_size: ${graph_size}
+
+  max_grad_norm: 1.01
+  entropy_coeff: 0    # entropy regularization
+  bl_coeff: 1.0       # weight of bl loss
+
+
+# test-set evaluation
+tester_cfg:
+  test_batch_size: 32
+  render: True
+  disable_progress_bar: False
+  sampling: False
+  num_samples: 10

@@ -1,0 +1,7 @@
+# @package _global_
+
+env_cfg: 
+  render: False
+  plot_save_dir: #None
+  k_nbh_frac: 0.05
+  tour_graph_update_step: 4

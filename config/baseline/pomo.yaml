@@ -1,0 +1,14 @@
+# @package _global_
+# model parameters
+
+baseline_cfg:
+  baseline_type: 'pomo'
+  baseline_args: {}
+  warmup: False    # use warmup procedure
+  warmup_args: #None
+
+# enable POMO rollout samples in env cfg
+env_cfg:
+  pomo: True
+  num_samples: 16
+  pomo_single_start_node: False

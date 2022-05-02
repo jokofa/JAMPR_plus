@@ -1,0 +1,39 @@
+# @package _global_
+# model parameters
+
+# meta
+ID: "solver_rc1"
+debug_lvl: 0
+no_warnings: True
+cuda: False
+data_path: #None
+seed: 1234
+
+# search
+time_limit: #None                 # search time limit of LNS
+num_steps: 10                     # number of iterations (set to infinity if time_limit is specified)
+num_samples: 20                   # number of policy samples
+num_best: 2                       # number of best samples to select for population
+num_other: 3                      # number of other samples to select
+selection_mode: "similarity"      # selection mode [random, similar]
+ls_step: 1                        # execute LS every ls_step steps, 0 to deactivate LS
+pomo_inference: True              # flag to use POMO inference
+pomo_single_start_node: False     # flag to use only a single pre-selected start-node for POMO
+add_best: True                    # flag to always add the best solution to the current solution pool
+
+ls_cfg:   # local search
+  check_feasibility: False
+  verbose: False
+  search_strategy: 'gls'
+  search_timelimit: 8
+  max_time_wo_improvement: 0
+  penalty_v: 1000
+  globalspan: 100
+  raise_: False
+
+ds_cfg:   # destructor
+  destruction_mode: 'random_from_route'
+  rm_partial_mode: 'random'
+  rm_complete_mode: 'smallest'
+  frac_rm_nodes_from_partial: 0.1
+  frac_rm_complete_routes: 0.2
