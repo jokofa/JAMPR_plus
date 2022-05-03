@@ -1,7 +1,7 @@
 # JAMPR+ LNS
 
 This repo implements the Large Neighborhood Search based on
-Neural Construction Heuristics of the corresponding [paper]().
+Neural Construction Heuristics of the corresponding [paper](https://arxiv.org/abs/2205.00772).
 
 ---
 It is evaluated on the DIMACS [VRP-TW track](http://dimacs.rutgers.edu/programs/challenge/vrp/vrptw/)
