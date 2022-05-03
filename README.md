@@ -12,6 +12,16 @@ and is a
 - in a Large Neighborhood Search framework.
 
 
+Please cite us: 
+```
+@article{falkner2022large,
+  title={Large Neighborhood Search based on Neural Construction Heuristics},
+  author={Falkner, Jonas K and Thyssens, Daniela and Schmidt-Thieme, Lars},
+  journal={arXiv preprint arXiv:2205.00772},
+  year={2022}
+}
+``` 
+
 ### Setup
 Install the requirements as conda environment
 ```sh
